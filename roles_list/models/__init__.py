@@ -2,3 +2,4 @@
 
 
 from . import roles_template_list
+from . import sale
