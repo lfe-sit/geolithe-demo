@@ -63,7 +63,7 @@
 	                    		</tree>
 	                    	</field>
 	                    </page>
-	                    <page name="roles" string="Related Articles">
+	                    <page name="roles" string="Rôles liés">
 	                    	<field name="role_ids" readonly="1">
 	                    		<tree>
 	                    			<field name="role"/>
