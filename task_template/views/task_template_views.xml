@@ -63,6 +63,15 @@
 	                    		</tree>
 	                    	</field>
 	                    </page>
+	                    <page name="roles" string="Related Articles">
+	                    	<field name="role_ids" readonly="1">
+	                    		<tree>
+	                    			<field name="role"/>
+	                    			<field name="number"/>
+	                    			<field name="project_template_id" invisible="1"/>
+	                    		</tree>
+	                    	</field>
+	                    </page>
 	                </notebook>
                 </sheet>
                 <div class="oe_chatter">

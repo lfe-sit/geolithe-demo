@@ -20,7 +20,7 @@ class TaskTemplate(models.Model):
     parent_id = fields.Many2one('project.task.template', string='Parent Task', index=True, tracking=True)
     child_ids = fields.One2many('project.task.template', 'parent_id', string="Sub-tasks", context={'active_test': False}, tracking=True)
     product_ids = fields.Many2many('product.template', 'template_product_rel', 'task_template_id', 'product_id', string="Related Articles", tracking=True)
-    role_ids = fields.Many2many('product.template', 'template_product_rel', 'task_template_id', 'product_id', string="Related Articles", tracking=True)
+    role_ids = fields.One2many('roles.template.list', 'project_template_id', string="Rôles liés", tracking=True)
 
     @api.depends('child_ids.planned_hours')
     def _compute_subtask_planned_hours(self):
