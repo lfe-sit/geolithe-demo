@@ -26,5 +26,7 @@
         'security/ir.model.access.csv',
         'views/task_template_views.xml',
         'views/product_views.xml',
+        'views/project_task_views.xml',
+        'wizard/create_role.xml'
     ],
 }
