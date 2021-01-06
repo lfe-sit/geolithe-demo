@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "SIT -  Task template",
+    'name': "SIT - Roles list",
 
     'summary': """
-        Module that add a task template""",
+        Module that links projects, tasks templates with roles""",
 
     'description': """
-        Long description of module's purpose
+    Module that links projects, tasks templates with roles
     """,
 
     'author': "SimplicIT",
@@ -16,10 +16,10 @@
     # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Project',
-    'version': '0.3',
+    'version': '0.2',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale_timesheet', 'product', 'project', 'sale'],
+    'depends': ['task_template', 'planning'],
 
     # always loaded
     'data': [
