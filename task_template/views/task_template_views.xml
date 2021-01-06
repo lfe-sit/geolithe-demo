@@ -64,8 +64,8 @@
 	                    	</field>
 	                    </page>
 	                    <page name="roles" string="Rôles liés">
-	                    	<field name="role_ids" >
-	                    		<tree>
+	                    	<field name="role_ids" editable ="true" context="{'project_template_id':active_id }">
+	                    		<tree >
 	                    			<field name="role"/>
 	                    			<field name="number"/>
 	                    			<field name="project_template_id" invisible="1"/>
