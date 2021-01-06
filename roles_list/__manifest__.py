@@ -24,8 +24,8 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'wizard/create_role.xml',
         'views/task_template_views.xml',
         'views/project_task_views.xml',
-        'wizard/create_role.xml'
     ],
 }
