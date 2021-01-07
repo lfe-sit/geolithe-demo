@@ -14,6 +14,7 @@
             <form string="Create role">
                 <group>
                     <field name="date_creation_role" />
+                    <field name="project_task_id" />
                 </group>
                 <footer>
                     <button string="Valider" name="validate_create_role" type="object" class="btn-primary"/>

@@ -1,6 +1,9 @@
 from odoo import api, models, fields, _
 from odoo.exceptions import UserError
 
+import logging
+
+_logger = logging.getLogger(__name__)
 
 class ProjectTask(models.Model):
     _inherit = 'project.task'
@@ -9,6 +12,7 @@ class ProjectTask(models.Model):
     
     def create_role_action(self):
         view = self.env.ref('roles_list.create_role_wizard')
+        
         return {
             'name': _('Créer les postes'),
             'type': 'ir.actions.act_window',
@@ -17,6 +21,6 @@ class ProjectTask(models.Model):
             'views': [(view.id, 'form')],
             'view_id': view.id,
             'target': 'new',
-            'context': dict(self.env.context,  default_role_ids==[(0, 0, {'role':  p.role, 'number': p.number, project_template_id: p.project_template_id}) 
-                                                                  for p in self.role_ids]),
+            'context': dict(self.env.context,  
+                            default_project_task_id=self.id),
         }
