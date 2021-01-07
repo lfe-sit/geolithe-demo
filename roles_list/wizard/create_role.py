@@ -40,8 +40,8 @@ class CreateRole(models.TransientModel):
         values = []
         for r in self.project_task_id.role_ids:
             for n in range(r.number):
-                if r.equipment:
-                    values.append({'equipment': r.role.equipment.id,
+                if r.role.equipment:
+                    values.append({'equipment': r.equipment.id,
                                 'project_id': self.project_task_id.project_id.id,
                                 'task_id': self.project_task_id.id,
                                 'start_datetime': self._getstart_datetime(self.date_creation_role, r.role.start_time),
