@@ -40,16 +40,22 @@ class CreateRole(models.TransientModel):
         values = []
         for r in self.project_task_id.role_ids:
             for n in range(r.number):
-                _logger.info(r.role.role_id.name)
-                _logger.info(n)
-
-                values.append({'role_id': r.role.role_id.id,
-                             'project_id': self.project_task_id.project_id.id,
-                             'task_id': self.project_task_id.id,
-                             'start_datetime': self._getstart_datetime(self.date_creation_role, r.role.start_time),
-                             'end_datetime': self._getend_datetime(self.date_creation_role, r.role.duration, r.role.start_time),
-                             'template_id': r.role.id
-                            })
+                if r.equipment:
+                    values.append({'equipment': r.role.equipment.id,
+                                'project_id': self.project_task_id.project_id.id,
+                                'task_id': self.project_task_id.id,
+                                'start_datetime': self._getstart_datetime(self.date_creation_role, r.role.start_time),
+                                'end_datetime': self._getend_datetime(self.date_creation_role, r.role.duration, r.role.start_time),
+                                'template_id': r.role.id
+                                })
+                else:
+                    values.append({'role_id': r.role.role_id.id,
+                                'project_id': self.project_task_id.project_id.id,
+                                'task_id': self.project_task_id.id,
+                                'start_datetime': self._getstart_datetime(self.date_creation_role, r.role.start_time),
+                                'end_datetime': self._getend_datetime(self.date_creation_role, r.role.duration, r.role.start_time),
+                                'template_id': r.role.id
+                                })
                 _logger.info(values)
 
         res = self.env['planning.slot'].create(values)

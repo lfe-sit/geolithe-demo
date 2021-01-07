@@ -25,6 +25,7 @@
     'data': [
         'security/ir.model.access.csv',
         'wizard/create_role.xml',
+        'views/planning_slot_template.xml',
         'views/task_template_views.xml',
         'views/project_task_views.xml',
         'views/planning_role.xml',

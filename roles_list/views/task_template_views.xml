@@ -12,6 +12,7 @@
                     <field name="role_ids"  >
                         <tree editable="top" multi_edit="1"  context="{'project_template_id':active_id }">
                             <field name="role"/>
+                            <field name="equipment"/>
                             <field name="number"/>
                             <field name="project_template_id" invisible="1"/>
                         </tree>

@@ -9,3 +9,8 @@ class PlanningRole(models.Model):
     _inherit = 'planning.role'
 
     equipment = fields.Many2many('maintenance.equipment')
+
+class PlanningRoleTemplate(models.Model):
+    _inherit = 'planning.role'
+
+    equipment = fields.Many2many('maintenance.equipment')

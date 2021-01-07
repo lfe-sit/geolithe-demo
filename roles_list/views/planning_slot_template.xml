@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<odoo>
+
+	<record id="planning_slot_template_view_tree" model="ir.ui.view">
+        <field name="name">planning.slot.template.tree</field>
+        <field name="model">planning.role</field>
+        <field name="inherit_id" ref="planning.planning_slot_template_view_tree"/>
+        <field eval="2" name="priority"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='role_id']" position="after">
+                <field name="equipment"/>
+            </xpath>
+        </field>
+	</record>
+	
+  	
+</odoo>
