@@ -11,8 +11,9 @@ class HrEmployee(models.Model):
     _inherit = 'hr.employee'
 
     def name_get(self):
-        if self.name and self.job_title:
-            return "{} - {}".format(self.name, self.job_title)
-        else:
-            result = super(HrEmployee, self).name_get()
-        return result
+        res = dict(super(HrEmployee, self).name_get())
+        for e in self:
+            if e.name and e.job_title:
+                res[e.id] = "{} - {}".format(e.name, e.job_title)
+        return list(res.items())
+    
