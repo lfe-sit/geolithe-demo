@@ -16,7 +16,7 @@
     # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Project',
-    'version': '0.3',
+    'version': '0.4',
 
     # any module necessary for this one to work correctly
     'depends': ['task_template', 'planning'],
@@ -27,5 +27,6 @@
         'wizard/create_role.xml',
         'views/task_template_views.xml',
         'views/project_task_views.xml',
+        'views/planning_role.xml',
     ],
 }
