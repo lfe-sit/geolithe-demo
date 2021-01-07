@@ -19,7 +19,7 @@
     'version': '0.4',
 
     # any module necessary for this one to work correctly
-    'depends': ['task_template', 'planning'],
+    'depends': ['task_template', 'planning', 'equipment'],
 
     # always loaded
     'data': [
