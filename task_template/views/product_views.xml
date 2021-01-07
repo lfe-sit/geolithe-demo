@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="task_templateview_product_timesheet_form" model="ir.ui.view">
+        <field name="name">product.template.task.template.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="sale.product_template_form_view_invoice_policy"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+            	<page name="task_template" string="Tasks Template"  attrs="{'invisible':[('service_tracking','not in',['task_template_global_project', 'task_template_new_project'])]}">
+            		<field name="task_template_ids" domain="[('parent_id', '=', None)]"/>
+            	</page>
+            </xpath>
+            <xpath expr="//field[@name='project_id']" position="attributes">
+            	<attribute name='attrs'>{'invisible':[('service_tracking','not in',['task_global_project', 'task_template_global_project'])], 
+            							 'required':[('service_tracking','in',['task_global_project', 'task_template_global_project'])]}
+            	</attribute>
+            </xpath>
+            <xpath expr="//field[@name='project_template_id']" position="attributes">
+            	<attribute name='attrs'>{'invisible':[('service_tracking','not in',['task_new_project', 'project_only', 'task_template_new_project'])]}</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

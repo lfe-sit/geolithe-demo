@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<odoo>
+
+	<record id="view_project_task_template_form_inherit" model="ir.ui.view">
+        <field name="name">project.task.template.form.inherit</field>
+        <field name="model">project.task.template</field>
+        <field name="inherit_id" ref="task_template.view_project_task_template_form"/>
+        <field eval="2" name="priority"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='product_template']" position="after">
+                <page name="roles" string="Rôles liés">
+                    <field name="role_ids"  >
+                        <tree editable="top" multi_edit="1"  context="{'project_template_id':active_id }">
+                            <field name="role"/>
+                            <field name="equipment"/>
+                            <field name="number"/>
+                            <field name="project_template_id" invisible="1"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+	</record>
+	
+  	
+</odoo>
