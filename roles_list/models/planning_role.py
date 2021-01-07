@@ -11,6 +11,6 @@ class PlanningRole(models.Model):
     equipment = fields.Many2many('maintenance.equipment')
 
 class PlanningRoleTemplate(models.Model):
-    _inherit = 'planning.role'
+    _inherit = 'planning.slot.template'
 
     equipment = fields.Many2many('maintenance.equipment')
